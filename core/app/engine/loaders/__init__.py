@@ -17,6 +17,7 @@ def load_configs():
 def get_documents():
     documents = []
     config = load_configs()
+    breakpoint()
     for loader_type, loader_config in config.items():
         logger.info(
             f"Loading documents from loader: {loader_type}, config: {loader_config}"

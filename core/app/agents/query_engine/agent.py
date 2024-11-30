@@ -16,6 +16,7 @@ def get_query_engine_tool() -> QueryEngineTool:
     """
     Provide an agent worker that can be used to query the index.
     """
+    breakpoint()
     index = get_index()
     if index is None:
         raise ValueError("Index not found. Please create an index first.")
@@ -25,7 +26,7 @@ def get_query_engine_tool() -> QueryEngineTool:
         metadata=ToolMetadata(
             name="context_data",
             description="""
-                Provide the provided context information. 
+                Provide the provided context information.
                 Use a detailed plain text question as input to the tool.
             """,
         ),
@@ -39,8 +40,11 @@ def init_query_engine_agent(
     Initialize the agent service.
     """
     agent = FunctionCallingAgentWorker(
-        tools=[get_query_engine_tool()], llm=Settings.llm, prefix_messages=[]
+        tools=[get_query_engine_tool()],
+        llm=Settings.llm,
+        prefix_messages=[],
     ).as_agent()
+
     return AgentService(
         service_name="context_query_agent",
         agent=agent,

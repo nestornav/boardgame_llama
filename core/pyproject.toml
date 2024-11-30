@@ -1,6 +1,6 @@
 [tool]
 [tool.poetry]
-name = "bga-api"
+name = "app"
 version = "0.0.1"
 description = ""
 authors = [ "Nestor Navarro <nestornav@gmail.com>" ]
@@ -14,6 +14,8 @@ python = "^3.11"
 llama-agents = "^0.0.3"
 llama-index-embeddings-openai = "^0.1.10"
 llama-index-llms-openai = "^0.1.23"
+python-telegram-bot = "^21.7"
+cachetools = "^5.5.0"
 
 [tool.poetry.dependencies.llama-index-agent-openai]
 version = "0.2.6"
