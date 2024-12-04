@@ -1,7 +1,7 @@
 import os
 import logging
 from typing import Dict
-from llama_parse import LlamaParse
+#from llama_parse import LlamaParse
 from pydantic import BaseModel, validator
 
 logger = logging.getLogger(__name__)
@@ -32,17 +32,16 @@ def llama_parse_parser():
     )
     return parser
 
-
+"""
 def llama_parse_extractor() -> Dict[str, LlamaParse]:
     from llama_parse.utils import SUPPORTED_FILE_TYPES
 
     parser = llama_parse_parser()
     return {file_type: parser for file_type in SUPPORTED_FILE_TYPES}
-
+"""
 
 def get_file_documents(config: FileLoaderConfig):
     from llama_index.core.readers import SimpleDirectoryReader
-
     try:
         file_extractor = None
         if config.use_llama_parse:
