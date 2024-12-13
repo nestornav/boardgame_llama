@@ -135,5 +135,6 @@ dmypy.json
 cython_debug/
 .DS_Store
 
-core/data/
-core/storage
+board/data/
+board/storage
+.devcontainer
