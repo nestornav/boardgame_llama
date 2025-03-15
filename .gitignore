@@ -137,4 +137,5 @@ cython_debug/
 
 board/data/
 board/storage
-.devcontainer
+board/venv/
+.devcontainer/
